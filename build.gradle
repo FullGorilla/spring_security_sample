@@ -23,11 +23,12 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    	}
+	implementation 'org.springframework.security:spring-security-config:5.5.1'
+	implementation 'org.springframework.security:spring-security-web:5.5.1'
+	
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
