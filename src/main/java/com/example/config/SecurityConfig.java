@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.failureUrl("/loginForm?error");
 		
 		http.logout()
-		.logoutUrl("/loginForm")
+		.logoutUrl("/logout")
 		.logoutSuccessUrl("/loginForm");
 	}
 	
