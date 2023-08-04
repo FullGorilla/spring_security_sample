@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.entity.User;
 
+
 public class LoginUser implements UserDetails {
 	
 	private final User user;
@@ -59,8 +60,11 @@ public class LoginUser implements UserDetails {
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO 自動生成されたメソッド・スタブ
-		return AuthorityUtils.NO_AUTHORITIES;
+		
+		if(this.user.getRole().equals("管理者")) {
+			return AuthorityUtils.createAuthorityList("ADMIN", "GENERAL");
+		}
+		return AuthorityUtils.createAuthorityList("GENERAL");
 	}
 
 }
