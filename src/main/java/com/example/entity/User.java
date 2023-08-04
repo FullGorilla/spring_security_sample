@@ -1,12 +1,12 @@
 package com.example.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 
 @Entity
@@ -27,6 +27,9 @@ public class User {
 	
 	@Column(name = "PASSWORD")
 	private String password;
+	
+	@Column(name = "ROLE")
+	private String role;
 	
 	
 	public Integer getId() {
@@ -59,6 +62,14 @@ public class User {
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String getRole() {
+		return this.role;
+	}
+	
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 }
